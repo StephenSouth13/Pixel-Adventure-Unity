@@ -35,15 +35,16 @@ Dự án mang phong cách **pixel art** cổ điển, đem lại trải nghiệm
 ---
 ## 🧑‍💻 Thông tin sinh viên thực hiện
 
-Họ tên: Quách Thành Long
+- Họ tên: Quách Thành Long
 
-Email: longqt.124010124034@vtc.edu.vn
+- Email: longqt.124010124034@vtc.edu.vn
 
-Lớp học phần: K24GD-03-2D Game Engine
+- Lớp học phần: K24GD-03-2D Game Engine
 
-Giờ học: 8h30 – 11h30
+- Giờ học: 8h30 – 11h30
 
-Giảng viên hướng dẫn: Thầy Nguyễn Trung Hiếu
+- Giảng viên hướng dẫn: Thầy Nguyễn Trung Hiếu
+
 ---
-📸 Hình ảnh minh họa
-![alt text](image.png)
+## 📸 Hình ảnh minh họa
+- ![alt text](image.png)
