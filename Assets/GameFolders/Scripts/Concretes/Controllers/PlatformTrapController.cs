@@ -15,7 +15,8 @@ namespace Controllers
         {
             if (collision.gameObject.CompareTag("Player"))
             {
-                _rb.isKinematic = false;
+                _rb.bodyType = RigidbodyType2D.Dynamic;
+
                 _rb.gravityScale = 2f;
                 Destroy(this.gameObject, 1.5f);
             }
