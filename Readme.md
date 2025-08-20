@@ -1,3 +1,4 @@
+![alt text](img/vtclogo.png)
 # 🐗 PIXEL_ADVENTURE  
 
 **PIXEL_ADVENTURE** là một trò chơi **platformer 2D** được phát triển bằng **Unity**, nơi người chơi điều khiển nhân vật rừng rú dễ thương phiêu lưu qua các màn chơi đầy thử thách.  
