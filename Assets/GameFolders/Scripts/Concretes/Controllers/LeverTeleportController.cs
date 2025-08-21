@@ -1,28 +1,29 @@
-﻿using Unity.Cinemachine;
+using Cinemachine;
 using Managers;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Controllers
 {
     public class LeverTeleportController : MonoBehaviour
     {
+         
         [SerializeField] Transform _teleportPos;
-        [SerializeField] CinemachineCamera _followingCam;   // Cinemachine mới (Unity 6)
+        [SerializeField] CinemachineVirtualCamera _followingCam;
         [SerializeField] float _lensValue;
-
         PlayerController _player;
         Animator _anim;
         Animator _playerAnim;
         bool IsLeverOn;
-
+  
         private void Awake()
         {
             _anim = GetComponent<Animator>();
         }
-
         public void LeverInteraction()
         {
-            TriggerLever();
+                TriggerLever();
         }
 
         private void TriggerLever()
@@ -31,41 +32,35 @@ namespace Controllers
                 LeverOff();
             else
                 LeverOn();
-        }
 
+        }
         private void LeverOn()
         {
             SoundManager.Instance.PlaySound(6);
-
-            // ✅ check null tránh crash
-            if (_followingCam != null)
-                _followingCam.Lens.OrthographicSize = _lensValue;
-
-            if (_playerAnim != null)
-                _playerAnim.SetTrigger("IsAppear");
-
+            _followingCam.m_Lens.OrthographicSize = _lensValue;
+            _playerAnim.SetTrigger("IsAppear");
             SoundManager.Instance.PlaySound(3);
             IsLeverOn = true;
             _anim.SetBool("IsActive", true);
+            _player.transform.position = _teleportPos.position;
 
-            if (_player != null && _teleportPos != null)
-                _player.transform.position = _teleportPos.position;
         }
-
         private void LeverOff()
         {
             SoundManager.Instance.PlaySound(7);
             IsLeverOn = false;
             _anim.SetBool("IsActive", false);
-        }
 
-        private void OnTriggerStay2D(Collider2D collision)
+        }
+        private void OnTriggerStay2D(Collider2D collision) 
         {
-            if (collision.CompareTag("Player"))
+            if(collision.gameObject.CompareTag("Player"))
             {
-                _player = collision.GetComponent<PlayerController>();
-                _playerAnim = collision.GetComponent<Animator>();
+                _player = collision.gameObject.GetComponent<PlayerController>();
+                _playerAnim = collision.gameObject.GetComponent<Animator>();
             }
         }
+
     }
+
 }
