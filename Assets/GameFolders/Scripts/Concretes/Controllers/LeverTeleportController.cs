@@ -7,7 +7,7 @@ namespace Controllers
     public class LeverTeleportController : MonoBehaviour
     {
         [SerializeField] Transform _teleportPos;
-        [SerializeField] CinemachineCamera _followingCam;  // đổi sang CinemachineCamera
+        [SerializeField] CinemachineCamera _followingCam;   // Cinemachine mới (Unity 6)
         [SerializeField] float _lensValue;
 
         PlayerController _player;
@@ -36,12 +36,20 @@ namespace Controllers
         private void LeverOn()
         {
             SoundManager.Instance.PlaySound(6);
-            _followingCam.Lens.OrthographicSize = _lensValue; // API mới
-            _playerAnim.SetTrigger("IsAppear");
+
+            // ✅ check null tránh crash
+            if (_followingCam != null)
+                _followingCam.Lens.OrthographicSize = _lensValue;
+
+            if (_playerAnim != null)
+                _playerAnim.SetTrigger("IsAppear");
+
             SoundManager.Instance.PlaySound(3);
             IsLeverOn = true;
             _anim.SetBool("IsActive", true);
-            _player.transform.position = _teleportPos.position;
+
+            if (_player != null && _teleportPos != null)
+                _player.transform.position = _teleportPos.position;
         }
 
         private void LeverOff()
@@ -53,10 +61,10 @@ namespace Controllers
 
         private void OnTriggerStay2D(Collider2D collision)
         {
-            if (collision.gameObject.CompareTag("Player"))
+            if (collision.CompareTag("Player"))
             {
-                _player = collision.gameObject.GetComponent<PlayerController>();
-                _playerAnim = collision.gameObject.GetComponent<Animator>();
+                _player = collision.GetComponent<PlayerController>();
+                _playerAnim = collision.GetComponent<Animator>();
             }
         }
     }

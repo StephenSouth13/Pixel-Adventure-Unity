@@ -62,6 +62,7 @@ namespace Controllers
 
         private void Update()
         {
+            if (_input == null) return;
             if (_input.IsExitButton)
             {
                 if (SoundManager.Instance != null)
