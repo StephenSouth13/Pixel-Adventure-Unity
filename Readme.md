@@ -1,8 +1,9 @@
-![alt text](img/vtclogo.png)
+![Pixel Adventure Logo](img/vtclogo.png)
+
 # 🐗 PIXEL_ADVENTURE  
 
-**PIXEL_ADVENTURE** là một trò chơi **platformer 2D** được phát triển bằng **Unity**, nơi người chơi điều khiển nhân vật rừng rú dễ thương phiêu lưu qua các màn chơi đầy thử thách.  
-Bạn sẽ phải **thu thập trái cây**, **né tránh chướng ngại vật**, **tiêu diệt kẻ thù** và tìm cách vượt qua từng bản đồ đầy màu sắc.  
+**PIXEL_ADVENTURE** is a **2D platformer** built with **Unity**, where you guide a charming forest creature on a journey through challenging levels.  
+Your mission: **collect fruits**, **avoid deadly traps**, **defeat enemies**, and conquer vibrant pixel worlds filled with adventure.  
 
 ---
 
@@ -11,49 +12,49 @@ Bạn sẽ phải **thu thập trái cây**, **né tránh chướng ngại vật
 
 ---
 
-## 🎮 Giới thiệu  
+## 🎮 About the Game  
 
-- **Thể loại:** Platformer / Adventure 2D  
-- **Lấy cảm hứng từ:** Các trò chơi cổ điển như **Super Mario** và game pixel retro  
-- **Đặc điểm:** Đồ họa pixel art sinh động, gameplay cổ điển nhưng lôi cuốn  
-- **Trải nghiệm:** Kết hợp giữa phiêu lưu, hành động và thu thập vật phẩm  
+- **Genre:** 2D Platformer / Adventure  
+- **Inspired by:** Timeless classics like **Super Mario** and retro pixel art games  
+- **Highlights:** Colorful pixel graphics, nostalgic yet engaging gameplay  
+- **Experience:** A blend of adventure, action, and item collection  
 
 ---
 
-## 🧑‍💻 Thông tin sinh viên thực hiện  
+## 🧑‍💻 Developed By  
 
-- **Họ tên:** Quách Thành Long  
+- **Name:** Quách Thành Long  
 - **Email:** longqt.124010124034@vtc.edu.vn  
-- **Lớp học phần:** K24GD-03-2D Game Engine  
-- **Giờ học:** 8h30 – 11h30  
-- **Giảng viên hướng dẫn:** Thầy Nguyễn Trung Hiếu  
+- **Course:** K24GD-03-2D Game Engine  
+- **Class Time:** 8:30 AM – 11:30 AM  
+- **Instructor:** Mr. Nguyễn Trung Hiếu  
 
 ---
 
-## 🚀 Tính năng nổi bật  
+## 🚀 Key Features  
 
-- 🎨 **Đồ họa pixel art đầy màu sắc** với phong cách retro  
-- 🕹️ **Điều khiển dễ hiểu** (di chuyển, nhảy, tấn công)  
-- 🍌 **Thu thập vật phẩm** (chuối, dưa hấu, cà rốt,...) để tăng điểm  
-- ⚔️ **Kẻ thù đa dạng** và **cơ chế bẫy nguy hiểm**  
-- 🔊 **Âm nhạc & hiệu ứng âm thanh vui nhộn**  
-- 📈 **Cấp độ thử thách**, càng đi sâu càng khó  
-
----
-
-## 🛠️ Công nghệ sử dụng  
-
-- **Game Engine:** Unity 2D  
-- **Ngôn ngữ:** C#  
-- **Thiết kế đồ họa:** Sprite Editor / Aseprite  
-- **Quản lý mã nguồn:** GitHub  
+- 🎨 **Vibrant pixel art** with a retro-inspired style  
+- 🕹️ **Simple, intuitive controls** (move, jump, attack)  
+- 🍌 **Collectible items** (bananas, watermelons, carrots, etc.) to boost your score  
+- ⚔️ **Variety of enemies** and tricky traps to overcome  
+- 🔊 **Catchy music & playful sound effects**  
+- 📈 **Progressive difficulty**, with each stage more challenging than the last  
 
 ---
 
-## 📦 Cài đặt & chạy game  
+## 🛠️ Tech Stack  
+
+- **Engine:** Unity 2D  
+- **Language:** C#  
+- **Graphics Tools:** Sprite Editor / Aseprite  
+- **Version Control:** GitHub  
+
+---
+
+## 📦 Installation & Play  
 
 ```bash
-# Clone repo
+# Clone this repository
 git clone https://github.com/StephenSouth13/Pixel-Adventure-Unity.git
 
-# Mở project trong Unity Hub và bấm Play để chạy game
+# Open the project in Unity Hub and hit ▶️ Play to start your adventure

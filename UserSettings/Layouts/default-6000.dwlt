@@ -368,7 +368,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 78
+    y: 24
     width: 1003
     height: 414.4
   m_SerializedDataModeController:
@@ -911,7 +911,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -0.6485969, y: 1.0651748, z: -0.10770585}
+    m_Target: {x: 19.740599, y: -2.246873, z: -0.26022875}
     speed: 2
     m_Value: {x: -0.6485969, y: 1.0651748, z: -0.10770585}
   m_RenderMode: 0
@@ -963,7 +963,7 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 8.070262
+    m_Target: 23.322514
     speed: 2
     m_Value: 8.070262
   m_Ortho:
@@ -1093,7 +1093,7 @@ MonoBehaviour:
       height: 432
     m_MinimalGUI: 1
   m_defaultScale: 0.7115741
-  m_LastWindowPixelSize: {x: 2507.5, y: 821}
+  m_LastWindowPixelSize: {x: 1003, y: 328.4}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -1121,8 +1121,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Hierarchy\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1004
-    y: 78
+    x: 1005
+    y: 24
     width: 268.80005
     height: 414.4
   m_SerializedDataModeController:
@@ -1139,7 +1139,7 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6cca0000
+      m_SelectedIDs: 
       m_LastClickedID: 0
       m_ExpandedIDs: 8ae3ffffe0faffff
       m_RenameOverlay:
@@ -1187,8 +1187,8 @@ MonoBehaviour:
     m_TextWithWhitespace: "Inspector\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 1274.8
-    y: 78
+    x: 1275.8
+    y: 24
     width: 260.19995
     height: 414.4
   m_SerializedDataModeController:
@@ -1571,7 +1571,7 @@ MonoBehaviour:
   m_Pos:
     serializedVersion: 2
     x: 0
-    y: 518.4
+    y: 464.4
     width: 1536
     height: 251.6
   m_SerializedDataModeController:
@@ -1615,7 +1615,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 748.4}
     m_SelectedIDs: 62ca0000
     m_LastClickedID: 51810
-    m_ExpandedIDs: 00000000c4c80000c6c80000c8c80000cac80000ccc80000cec80000d0c80000d2c80000d4c80000d6c80000d8c8000000ca9a3b
+    m_ExpandedIDs: 00000000fabd0000fcbd0000febd000000be000002be000004be000006be000008be00000abe00000cbe00000ebe0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1644,7 +1644,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 3a630000
     m_LastClickedID: 25402
-    m_ExpandedIDs: 00000000c4c80000c6c80000c8c80000cac80000ccc80000cec80000d0c80000d2c80000d4c80000d6c80000d8c80000
+    m_ExpandedIDs: 00000000fabd0000fcbd0000febd000000be000002be000004be000006be000008be00000abe00000cbe00000ebe0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
