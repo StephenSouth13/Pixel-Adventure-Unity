@@ -2,7 +2,7 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
+  serializedVersion: 3
   tags:
   - OneWayPlatform
   - InteractableObject
@@ -21,7 +21,7 @@ TagManager:
   - Checkpoints
   - Enemy
   - Traps
-  - 
+  - Button
   - 
   - 
   - 
@@ -48,3 +48,8 @@ TagManager:
   - name: Foreground
     uniqueID: 1898246479
     locked: 0
+  - name: UI Button
+    uniqueID: 229736197
+    locked: 0
+  m_RenderingLayers:
+  - Default
