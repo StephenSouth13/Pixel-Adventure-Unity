@@ -8,6 +8,8 @@ Your mission: **collect fruits**, **avoid deadly traps**, **defeat enemies**, an
 ---
 
 ## 📸 Screenshot  
+- Home Page:
+![alt text](img/Home.png)
 ![Pixel Adventure Screenshot](img/1.png)  
 
 ---
