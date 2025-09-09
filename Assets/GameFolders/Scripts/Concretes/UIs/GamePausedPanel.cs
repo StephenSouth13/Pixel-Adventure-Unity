@@ -1,7 +1,8 @@
-using Managers;
+﻿using Managers;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GamePausedPanel : GameEndPanel
 {
@@ -16,5 +17,9 @@ public class GamePausedPanel : GameEndPanel
     public void SeeNextLevel()
     {
         GameManager.Instance.LoadSceneFromIndex(1);
+    }
+    public void ExitToHome()
+    {
+        SceneManager.LoadScene("Home");
     }
 }
