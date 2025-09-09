@@ -12,6 +12,10 @@ Your mission: **collect fruits**, **avoid deadly traps**, **defeat enemies**, an
 ![alt text](img/Home.png)
 ![Pixel Adventure Screenshot](img/1.png)  
 
+## 🎥 Gameplay Demo
+
+[![Watch Pixel Adventure Gameplay](https://img.youtube.com/vi/DZhKvdBUJM8/hqdefault.jpg)](https://www.youtube.com/watch?v=DZhKvdBUJM8)  
+*Click to watch a short gameplay demo showcasing levels, movement, and pixel art style.*
 ---
 
 ## 🎮 About the Game  
