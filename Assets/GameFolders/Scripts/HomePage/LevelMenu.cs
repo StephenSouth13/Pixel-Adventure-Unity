@@ -4,11 +4,11 @@ using UnityEngine.SceneManagement;
 public class LevelMenu : MonoBehaviour
 {
     // Danh sách tên scene theo thứ tự bạn muốn
-    private string[] levelNames = { "", "Tutorial", "Level1", "Level2" };
+    private string[] levelNames = { "Home", "Tutorial", "Level1", "Level2" };
 
     public void OpenLevel(int levelIndex)
     {
-        if (levelIndex > 0 && levelIndex < levelNames.Length)
+        if (levelIndex >= 0 && levelIndex < levelNames.Length)
         {
             string levelName = levelNames[levelIndex];
             SceneManager.LoadScene(levelName);
