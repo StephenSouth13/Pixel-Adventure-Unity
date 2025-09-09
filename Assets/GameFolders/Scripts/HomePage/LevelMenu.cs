@@ -1,16 +1,22 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LevelMenu : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    // Danh sách tên scene theo thứ tự bạn muốn
+    private string[] levelNames = { "", "Tutorial", "Level1", "Level2" };
 
-    // Update is called once per frame
-    void Update()
+    public void OpenLevel(int levelIndex)
     {
-        
+        if (levelIndex > 0 && levelIndex < levelNames.Length)
+        {
+            string levelName = levelNames[levelIndex];
+            SceneManager.LoadScene(levelName);
+            Debug.Log($"Opening scene: {levelName}");
+        }
+        else
+        {
+            Debug.LogWarning($"Invalid level index: {levelIndex}");
+        }
     }
 }
