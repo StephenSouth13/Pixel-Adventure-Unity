@@ -26,6 +26,14 @@ Your mission: **collect fruits**, **avoid deadly traps**, **defeat enemies**, an
 - **Experience:** A blend of adventure, action, and item collection  
 
 ---
+## 🌐 Play Online (WebGL)
+
+You can play **PIXEL_ADVENTURE** instantly in your browser:
+
+🔗 [Play Now on Itch.io](https://quachthanh-long.itch.io/pixel-adventure-unity)
+
+> No installation required — just click the link, wait for the game to load, and enjoy!
+---
 
 ## 🧑‍💻 Developed By  
 
