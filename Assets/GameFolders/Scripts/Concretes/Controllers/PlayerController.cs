@@ -11,6 +11,9 @@ using System;
 
 namespace Controllers
 {
+    [Header("Mobile Jump Button")]
+    public bool jumpButtonPressed = false;
+
     public class PlayerController : MonoBehaviour
     {
         bool _isJumped;
@@ -68,7 +71,7 @@ namespace Controllers
             if(_horizontalAxis!=0 && _groundCheck.IsOnGround) SoundManager.Instance.PlaySound(1);
             else SoundManager.Instance.StopSound(1);
 
-            if (_input.IsJumpButtonDown && _groundCheck.IsOnGround)
+            if ((_input.IsJumpButtonDown || jumpButtonPressed) && _groundCheck.IsOnGround)
             {
                 _isJumped = true;               
             }
@@ -85,12 +88,13 @@ namespace Controllers
         private void FixedUpdate()
         {
             _rb.HorizontalMove(_horizontalAxis);  //if a gameObject has rb, dont use transform for movement
-            if (_isJumped )
-            {
-                SoundManager.Instance.PlaySound(0);
-                _rb.Jump();
-                _isJumped = false;
-            }
+            if (_isJumped)
+{
+    SoundManager.Instance.PlaySound(0);
+    _rb.Jump();
+    _isJumped = false;
+    jumpButtonPressed = false; // reset sau khi xử lý
+}
         }
         private void HandleGameUnpaused()
         {
@@ -103,5 +107,9 @@ namespace Controllers
         }
 
     }
+    public void OnJumpButtonPressed()
+{
+    jumpButtonPressed = true;
+}
 
 }
