@@ -1,23 +1,22 @@
 using Abstracts.Input;
 using Movements;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using Inputs;
 using Animations;
 using Mechanics;
 using Managers;
-using System;
 
 namespace Controllers
 {
-    [Header("Mobile Jump Button")]
-    public bool jumpButtonPressed = false;
-
     public class PlayerController : MonoBehaviour
     {
-        bool _isJumped;
+        [Header("Mobile Jump Button")]
+        public bool jumpButtonPressed = false; // Gán từ UI Button
+
         float _horizontalAxis;
+        bool _isJumped;
+        bool _isPaused;
+
         IPlayerInput _input;
         CharacterAnimation _anim;
         RbMovement _rb;
@@ -25,91 +24,92 @@ namespace Controllers
         GroundCheck _groundCheck;
         PlatformHandler _platform;
         InteractHandler _interact;
-        private bool _isPaused;
+
+        [Header("Mobile Joystick (Optional)")]
+        public Joystick mobileJoystick; // Gán từ Inspector nếu dùng mobile
 
         private void Awake()
         {
-            _rb= GetComponent<RbMovement>();
-            _anim= GetComponent<CharacterAnimation>();
+            _rb = GetComponent<RbMovement>();
+            _anim = GetComponent<CharacterAnimation>();
             _flip = GetComponent<Flip>();
             _groundCheck = GetComponent<GroundCheck>();
             _platform = GetComponent<PlatformHandler>();
             _interact = GetComponent<InteractHandler>();
+
+#if UNITY_ANDROID || UNITY_IOS
+            _input = new MobileInput(mobileJoystick);
+#else
             _input = new PcInput();
+#endif
         }
+
         private void OnEnable()
         {
             GameManager.Instance.OnGamePaused += HandleGamePaused;
             GameManager.Instance.OnGameUnpaused += HandleGameUnpaused;
         }
+
         private void OnDisable()
         {
             GameManager.Instance.OnGamePaused -= HandleGamePaused;
             GameManager.Instance.OnGameUnpaused -= HandleGameUnpaused;
         }
 
-
         private void Update()
         {
             if (_input.IsExitButton)
             {
-                SoundManager.Instance.PlaySound(2);
+                SoundManager.Instance?.PlaySound(2);
                 if (_isPaused)
-                {
-                    GameManager.Instance.UnpauseGame();
-                    
-                }
+                    GameManager.Instance?.UnpauseGame();
                 else
-                {
-                    GameManager.Instance.PauseGame();
-                    
-                }
+                    GameManager.Instance?.PauseGame();
             }
+
             if (_isPaused) return;
+
             _horizontalAxis = _input.HorizontalAxis;
 
-            if(_horizontalAxis!=0 && _groundCheck.IsOnGround) SoundManager.Instance.PlaySound(1);
-            else SoundManager.Instance.StopSound(1);
+            if (_horizontalAxis != 0 && _groundCheck.IsOnGround)
+                SoundManager.Instance?.PlaySound(1);
+            else
+                SoundManager.Instance?.StopSound(1);
 
             if ((_input.IsJumpButtonDown || jumpButtonPressed) && _groundCheck.IsOnGround)
-            {
-                _isJumped = true;               
-            }
-            if(_input.IsDownButton)
-                _platform.DisableCollider();
-            if(_input.IsInteractButton)
-            {
-                _interact.Interact();
-            }
-            _anim.JumpAnFallAnim(_groundCheck.IsOnGround, _rb.VelocityY);
-            _anim.HorizontalAnim(_horizontalAxis);
-            _flip.FlipCharacter(_horizontalAxis);
+                _isJumped = true;
+
+            if (_input.IsDownButton)
+                _platform?.DisableCollider();
+
+            if (_input.IsInteractButton)
+                _interact?.Interact();
+
+            _anim?.JumpAnFallAnim(_groundCheck.IsOnGround, _rb.VelocityY);
+            _anim?.HorizontalAnim(_horizontalAxis);
+            _flip?.FlipCharacter(_horizontalAxis);
         }
+
         private void FixedUpdate()
         {
-            _rb.HorizontalMove(_horizontalAxis);  //if a gameObject has rb, dont use transform for movement
+            _rb?.HorizontalMove(_horizontalAxis);
+
             if (_isJumped)
-{
-    SoundManager.Instance.PlaySound(0);
-    _rb.Jump();
-    _isJumped = false;
-    jumpButtonPressed = false; // reset sau khi xử lý
-}
-        }
-        private void HandleGameUnpaused()
-        {
-            _isPaused= false;
+            {
+                SoundManager.Instance?.PlaySound(0);
+                _rb?.Jump();
+                _isJumped = false;
+                jumpButtonPressed = false; // reset sau khi xử lý
+            }
         }
 
-        private void HandleGamePaused()
-        {
-            _isPaused = true;
-        }
+        private void HandleGameUnpaused() => _isPaused = false;
+        private void HandleGamePaused() => _isPaused = true;
 
+        // ✅ Gọi từ UI Button
+        public void OnJumpButtonPressed()
+        {
+            jumpButtonPressed = true;
+        }
     }
-    public void OnJumpButtonPressed()
-{
-    jumpButtonPressed = true;
-}
-
 }
