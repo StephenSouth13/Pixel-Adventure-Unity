@@ -36964,6 +36964,10 @@ PrefabInstance:
       propertyPath: _jumpForce
       value: 7.3
       objectReference: {fileID: 0}
+    - target: {fileID: 2228349935118744738, guid: 61f15fd1a44214348807bbdfb33edb52, type: 3}
+      propertyPath: jumpButtonPressed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2228349935118744739, guid: 61f15fd1a44214348807bbdfb33edb52, type: 3}
       propertyPath: m_Interpolate
       value: 0
@@ -37051,8 +37055,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  jumpForce: 7
   rb: {fileID: 2228349934915539807}
   mobileJoystick: {fileID: 1446884033}
+  jumpButtonPressed: 1
 --- !u!114 &2228349934915539819 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2228349935118744738, guid: 61f15fd1a44214348807bbdfb33edb52, type: 3}
