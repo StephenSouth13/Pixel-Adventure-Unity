@@ -6,6 +6,7 @@ namespace Inputs
     public class MobileInput : IPlayerInput
     {
         private Joystick _joystick;
+        private bool _jumpPressed = false;
 
         public MobileInput(Joystick joystick)
         {
@@ -13,10 +14,12 @@ namespace Inputs
         }
 
         public float HorizontalAxis => _joystick != null ? _joystick.Horizontal : 0f;
-        public bool IsJumpButtonDown => false; // dùng UI Button riêng
-        public bool IsJumpButton => false;     // thêm dòng này để khớp interface
+        public bool IsJumpButtonDown => _jumpPressed;
         public bool IsExitButton => false;
         public bool IsDownButton => false;
         public bool IsInteractButton => false;
+
+        public void PressJump() => _jumpPressed = true;
+        public void ResetJump() => _jumpPressed = false;
     }
 }

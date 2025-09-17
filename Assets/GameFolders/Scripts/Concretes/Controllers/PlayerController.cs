@@ -10,8 +10,8 @@ namespace Controllers
 {
     public class PlayerController : MonoBehaviour
     {
-        [Header("Mobile Jump Button")]
-        public bool jumpButtonPressed = false; // Gán từ UI Button
+        [Header("Mobile Joystick (Optional)")]
+        public Joystick mobileJoystick;
 
         float _horizontalAxis;
         bool _isJumped;
@@ -24,9 +24,6 @@ namespace Controllers
         GroundCheck _groundCheck;
         PlatformHandler _platform;
         InteractHandler _interact;
-
-        [Header("Mobile Joystick (Optional)")]
-        public Joystick mobileJoystick; // Gán từ Inspector nếu dùng mobile
 
         private void Awake()
         {
@@ -61,10 +58,8 @@ namespace Controllers
             if (_input.IsExitButton)
             {
                 SoundManager.Instance?.PlaySound(2);
-                if (_isPaused)
-                    GameManager.Instance?.UnpauseGame();
-                else
-                    GameManager.Instance?.PauseGame();
+                if (_isPaused) GameManager.Instance?.UnpauseGame();
+                else GameManager.Instance?.PauseGame();
             }
 
             if (_isPaused) return;
@@ -76,7 +71,7 @@ namespace Controllers
             else
                 SoundManager.Instance?.StopSound(1);
 
-            if ((_input.IsJumpButtonDown || jumpButtonPressed) && _groundCheck.IsOnGround)
+            if (_input.IsJumpButtonDown && _groundCheck.IsOnGround)
                 _isJumped = true;
 
             if (_input.IsDownButton)
@@ -99,7 +94,11 @@ namespace Controllers
                 SoundManager.Instance?.PlaySound(0);
                 _rb?.Jump();
                 _isJumped = false;
-                jumpButtonPressed = false; // reset sau khi xử lý
+
+#if UNITY_ANDROID || UNITY_IOS
+                if (_input is MobileInput mobile)
+                    mobile.ResetJump();
+#endif
             }
         }
 
@@ -109,7 +108,10 @@ namespace Controllers
         // ✅ Gọi từ UI Button
         public void OnJumpButtonPressed()
         {
-            jumpButtonPressed = true;
+#if UNITY_ANDROID || UNITY_IOS
+            if (_input is MobileInput mobile)
+                mobile.PressJump();
+#endif
         }
     }
 }
