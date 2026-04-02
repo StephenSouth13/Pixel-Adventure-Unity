@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6bf430d6e1e055440987bd5444c4f408
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/UI_Elements/Small/Slider Bars/Experience_Points_Container_Small.prefab
+  uploadId: 700894

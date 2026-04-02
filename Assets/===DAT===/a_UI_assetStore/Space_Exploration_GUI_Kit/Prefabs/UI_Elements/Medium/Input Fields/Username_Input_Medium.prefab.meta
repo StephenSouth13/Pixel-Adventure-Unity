@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: afcad7ebafa67a84c82b995fe2748ae4
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/UI_Elements/Medium/Input Fields/Username_Input_Medium.prefab
+  uploadId: 700894

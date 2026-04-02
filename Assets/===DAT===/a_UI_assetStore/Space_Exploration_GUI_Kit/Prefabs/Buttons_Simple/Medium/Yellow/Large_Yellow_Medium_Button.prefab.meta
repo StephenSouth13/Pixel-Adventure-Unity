@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 5e0d81b9be7d6e447b9f18d912188c9f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/Buttons_Simple/Medium/Yellow/Large_Yellow_Medium_Button.prefab
+  uploadId: 700894

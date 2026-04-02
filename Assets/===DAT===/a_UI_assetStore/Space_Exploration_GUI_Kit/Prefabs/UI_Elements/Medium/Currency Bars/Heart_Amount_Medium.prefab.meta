@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 378b06f84e8b18343971745862e8250b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/UI_Elements/Medium/Currency
+    Bars/Heart_Amount_Medium.prefab
+  uploadId: 700894

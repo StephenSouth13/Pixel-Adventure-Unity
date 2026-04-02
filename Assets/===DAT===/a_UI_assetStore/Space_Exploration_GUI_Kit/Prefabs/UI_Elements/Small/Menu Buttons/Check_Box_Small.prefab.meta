@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4432fdb057a342c4a934d46b4482f57a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/UI_Elements/Small/Menu Buttons/Check_Box_Small.prefab
+  uploadId: 700894

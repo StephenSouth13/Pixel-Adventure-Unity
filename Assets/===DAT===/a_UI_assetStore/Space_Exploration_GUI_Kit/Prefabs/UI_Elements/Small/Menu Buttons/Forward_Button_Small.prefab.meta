@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 81a0ec4cc5da373419a72ab1e0bcfc27
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/UI_Elements/Small/Menu Buttons/Forward_Button_Small.prefab
+  uploadId: 700894

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7a7195e376a4b6643976d8ea474e8d9f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/Buttons_Simple/Large/Purple/Purple_Large_Button.prefab
+  uploadId: 700894
