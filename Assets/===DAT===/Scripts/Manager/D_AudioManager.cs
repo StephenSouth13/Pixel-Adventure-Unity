@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class D_AudioManager : MonoBehaviour
 {
-    public static D_AudioManager Instance { get; private set; }
+    public static D_AudioManager Instance;
     public AudioSource musicSource;
     public AudioSource sfxSource;
     public float currentMusicVolume = 1f;
@@ -42,4 +42,16 @@ public class D_AudioManager : MonoBehaviour
             sfxSource.PlayOneShot(sfxClips[index]);
         }
     }
+    public void SetCurrentAudioVolume(bool isMusic, float volume)
+    {
+        if(isMusic)
+        {
+            currentMusicVolume = volume;
+        }
+        else
+        {
+            currentSFXVolume = volume;
+        }
+    }
+
 }

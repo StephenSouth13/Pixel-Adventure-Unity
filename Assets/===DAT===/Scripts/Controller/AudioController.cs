@@ -12,6 +12,8 @@ public class AudioController : MonoBehaviour
     [Header("Audio Manager Reference")]
     AudioSource audioSource;
     public bool isMusic; // Xác định đây là Toggle cho âm nhạc hay âm thanh
+    private bool isUpdating = false; // Biến để tránh vòng lặp khi cập nhật UI
+
 
     void Start()
     {
@@ -33,52 +35,70 @@ public class AudioController : MonoBehaviour
         audioSource = D_AudioManager.Instance.GetAudio(isMusic);
         // === Cài đặt trạng thái ban đầu của Toggle và Slider ===
         // Toggle
-        toggle.isOn = audioSource.isPlaying; // isplaying sẽ trả về true nếu âm thanh đang phát, ngược lại trả về false
         toggle.onValueChanged.AddListener(OnToggleValueChanged);
         // Slider
-        slider.value = audioSource.volume;
+        slider.value = audioSource.volume * 17f;
         slider.onValueChanged.AddListener(OnSliderValueChanged);
         
     }
 
     private void OnToggleValueChanged(bool value)
     {
+        if(isUpdating) return;
+        isUpdating = true;
+
         background.enabled = !value;
-        checkmark.enabled = value;
+        var volume = isMusic ? D_AudioManager.Instance.currentMusicVolume 
+                    : D_AudioManager.Instance.currentSFXVolume;
         if(value)
         {
-            if(isMusic)
-            {
-                D_AudioManager.Instance.currentMusicVolume = slider.value; // Lưu âm lượng hiện tại của nhạc
-            }
-            else
-            {
-                D_AudioManager.Instance.currentSFXVolume = slider.value; // Lưu âm lượng hiện tại của hiệu ứng âm thanh
-            }
-            slider.value = 0; // Khi Toggle bật
+            audioSource.volume = 0f;
+            slider.value = 0;
         }
         else
         {
-            if(isMusic)
+            if(slider.value == 0 && volume == 0)
             {
-                slider.value = D_AudioManager.Instance.currentMusicVolume; // Khôi phục âm lượng hiện tại của nhạc
+                slider.value = 1f; // Đặt về giá trị tối thiểu nếu trước đó là 0
+                volume = 1f; // Đặt về giá trị tối thiểu nếu trước đó là 0
+                audioSource.volume = Mathf.Clamp(volume / 17f, 0f, 1f) ;
+                if(isMusic)
+                {
+                    D_AudioManager.Instance.SetCurrentAudioVolume(isMusic, slider.value);
+                }
+                else
+                {
+                    D_AudioManager.Instance.SetCurrentAudioVolume(isMusic, slider.value);
+                }
+                isUpdating = false;
+                return;
+            }
+ 
+            
+            slider.value = volume ;
+            audioSource.volume = Mathf.Clamp(volume / 17f, 0f, 1f) ;
+        }
+        isUpdating = false;
+    }
+
+    private void OnSliderValueChanged(float value)
+    {
+        if(isUpdating) return;
+        isUpdating = true;
+        if(isMusic)
+            {
+                D_AudioManager.Instance.SetCurrentAudioVolume(isMusic, slider.value);
             }
             else
             {
-                slider.value = D_AudioManager.Instance.currentSFXVolume; // Khôi phục âm lượng hiện tại của hiệu ứng âm thanh
+                D_AudioManager.Instance.SetCurrentAudioVolume(isMusic, slider.value);
             }
-        }
+        float volume = Mathf.Clamp(value / 17f, 0f, 1f); // Chia cho 17 để chuyển về giá trị từ 0 đến 1
+        audioSource.volume = volume;
+        // Khi slider = 0 → Toggle ON (mute), ngược lại OFF
+        toggle.isOn = (value == 0);
+        background.enabled = !(value == 0);
+        isUpdating = false;
     }
-    private void OnSliderValueChanged(float value)
-    {
-        audioSource.volume = value; // Điều chỉnh âm lượng của AudioSource
-        if(value > 0)
-        {
-            toggle.isOn = true; // Nếu âm lượng lớn hơn 0, bật Toggle
 
-        }else
-        {
-            toggle.isOn = false; // Nếu âm lượng bằng 0, tắt Toggle
-        }
-    }
 }
