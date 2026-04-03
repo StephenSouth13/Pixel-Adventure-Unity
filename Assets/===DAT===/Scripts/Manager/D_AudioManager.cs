@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.Audio;
 public class D_AudioManager : MonoBehaviour
 {
     public static D_AudioManager Instance;
@@ -9,7 +9,6 @@ public class D_AudioManager : MonoBehaviour
     public float currentSFXVolume = 1f;
     public AudioClip[] musicClips;
     public AudioClip[] sfxClips;
-
     void Awake()
     {
         if (Instance == null)

@@ -12,6 +12,8 @@ public class AudioController : MonoBehaviour
     [Header("Audio Manager Reference")]
     AudioSource audioSource;
     public bool isMusic; // Xác định đây là Toggle cho âm nhạc hay âm thanh
+    public bool isAudioControllerOnlySoundEffect = false; 
+    // bật isAudioControllerOnlySoundEffect lên khi chỉ muốn dùng hàm PlaySFX mà không cần quản lý Toggle và Slider
     private bool isUpdating = false; // Biến để tránh vòng lặp khi cập nhật UI
 
 
@@ -26,13 +28,14 @@ public class AudioController : MonoBehaviour
             Debug.LogError("D_AudioManager instance not found in the scene.");
             return;
         }
+        audioSource = D_AudioManager.Instance.GetAudio(isMusic);
+        if(isAudioControllerOnlySoundEffect) return; // Nếu chỉ dùng để chơi SFX thì không cần thiết lập Toggle và Slider
         if(toggle == null || background == null || checkmark == null || slider == null)
         {
             Debug.LogError("Please assign all references in the inspector.");
             return;
         }
         // === lấy Instance ===
-        audioSource = D_AudioManager.Instance.GetAudio(isMusic);
         // === Cài đặt trạng thái ban đầu của Toggle và Slider ===
         // Toggle
         toggle.onValueChanged.AddListener(OnToggleValueChanged);
@@ -100,5 +103,8 @@ public class AudioController : MonoBehaviour
         background.enabled = !(value == 0);
         isUpdating = false;
     }
-
+    public void PlaySFX(int index)
+    {
+        D_AudioManager.Instance.PlaySFX(index);
+    }
 }

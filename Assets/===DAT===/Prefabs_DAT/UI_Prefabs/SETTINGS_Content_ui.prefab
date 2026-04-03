@@ -1731,7 +1731,7 @@ Animator:
   m_GameObject: {fileID: 2033445414565636569}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f6809af0759adae40bc6411ec1dfb42e, type: 2}
+  m_Controller: {fileID: 9100000, guid: 804282d3c44e24442982b17c0579b091, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -1990,7 +1990,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 17
-  m_WholeNumbers: 1
+  m_WholeNumbers: 0
   m_Value: 17
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2839,7 +2839,7 @@ MonoBehaviour:
   m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 17
-  m_WholeNumbers: 1
+  m_WholeNumbers: 0
   m_Value: 17
   m_OnValueChanged:
     m_PersistentCalls:
@@ -4363,6 +4363,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!1 &5958189145459425179
 GameObject:
   m_ObjectHideFlags: 0
@@ -4726,6 +4738,7 @@ MonoBehaviour:
   checkmark: {fileID: 6224179488013988204}
   slider: {fileID: 4493630451105343929}
   isMusic: 1
+  isAudioControllerOnlySoundEffect: 0
 --- !u!1 &6852823343569722657
 GameObject:
   m_ObjectHideFlags: 0
@@ -4868,9 +4881,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8397372513233604469}
-  - component: {fileID: 235152502546744264}
   m_Layer: 0
-  m_Name: Sound_Slider (Controller)
+  m_Name: Sound_Slider (Need  AudioController)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4894,23 +4906,6 @@ Transform:
   - {fileID: 4135988193114427818}
   m_Father: {fileID: 577133130764504198}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &235152502546744264
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6891728846242009814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91df3869db49a39448ea67f546d24172, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AudioController
-  toggle: {fileID: 8782833334023231654}
-  background: {fileID: 3932315841531926566}
-  checkmark: {fileID: 4590362044610878582}
-  slider: {fileID: 2410826796251292336}
-  isMusic: 0
 --- !u!1 &6906887004480025092
 GameObject:
   m_ObjectHideFlags: 0
