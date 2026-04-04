@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: cc0c115f1929cb14daa9b28e73c3cd9b
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/Buttons_Simple/Small/Pink/Long_Pink_Small_Button.prefab
+  uploadId: 700894

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 7c1043c7080117c44b6ace7653eca27f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/UI_Elements/Small/Menu Buttons/Dropdown_Small.prefab
+  uploadId: 700894

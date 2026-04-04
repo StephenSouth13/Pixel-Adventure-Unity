@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a55f517e977fe67489a56a5d77fad74e
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/UI_Elements/Large/Menu Buttons/Claim_Button_Large.prefab
+  uploadId: 700894

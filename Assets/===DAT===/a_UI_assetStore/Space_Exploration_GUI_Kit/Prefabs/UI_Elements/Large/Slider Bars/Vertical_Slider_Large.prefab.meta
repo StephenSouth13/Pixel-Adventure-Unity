@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 26d5e6ca5c7c10943b9a0a99d5803e4f
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/UI_Elements/Large/Slider Bars/Vertical_Slider_Large.prefab
+  uploadId: 700894

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 101c319917ef49548a48ad90596d7caf
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/Buttons_Simple/Large/Blue/Blue_Large_Button.prefab
+  uploadId: 700894

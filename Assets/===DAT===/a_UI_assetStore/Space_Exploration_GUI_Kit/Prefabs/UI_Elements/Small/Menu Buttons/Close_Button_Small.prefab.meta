@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: a762f43ba82e009469d24a5d013f1a92
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/UI_Elements/Small/Menu Buttons/Close_Button_Small.prefab
+  uploadId: 700894

@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 414882aae646f044b978ccd4baee45a1
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/UI_Elements/Medium/Currency
+    Bars/Coin_Amount_Medium.prefab
+  uploadId: 700894

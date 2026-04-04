@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3b25c8aa220d40a4baa4ca3bfbf1d7a5
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/UI_Elements/Extra_Large/Menu
+    Buttons/Back_Button_Extra_Large.prefab
+  uploadId: 700894

@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 1fa46faa21a98104380a8b00d177a691
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/UI_Elements/Medium/Menu Buttons/On-Off_Toggle_Medium.prefab
+  uploadId: 700894

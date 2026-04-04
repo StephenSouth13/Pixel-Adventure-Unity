@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: a61b3fffffe6aa14795b2a9f5502ca62
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/UI_Elements/Medium/Currency
+    Bars/Diamond_Amount_Medium.prefab
+  uploadId: 700894
