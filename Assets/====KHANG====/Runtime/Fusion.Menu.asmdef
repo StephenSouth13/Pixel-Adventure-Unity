@@ -1,0 +1,33 @@
+{
+    "name": "Fusion.Menu",
+    "rootNamespace": "",
+    "references": [
+        "Unity.TextMeshPro",
+        "Fusion.Unity"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.textmeshpro",
+            "expression": "1.0",
+            "define": "FUSION_ENABLE_TEXTMESHPRO"
+        },
+        {
+            "name": "com.unity.ugui",
+            "expression": "2.0",
+            "define": "FUSION_ENABLE_TEXTMESHPRO"
+        },
+        {
+            "name": "com.unity.multiplayer.playmode",
+            "expression": "0.6",
+            "define": "FUSION_ENABLE_MPPM"
+        }
+    ],
+    "noEngineReferences": false
+}

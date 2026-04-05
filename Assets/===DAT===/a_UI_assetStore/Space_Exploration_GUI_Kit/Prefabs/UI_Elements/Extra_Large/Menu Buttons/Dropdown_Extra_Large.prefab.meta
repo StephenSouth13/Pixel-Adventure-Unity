@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 8049adfab5fa0f543be04b38d3c26ae3
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/UI_Elements/Extra_Large/Menu
+    Buttons/Dropdown_Extra_Large.prefab
+  uploadId: 700894

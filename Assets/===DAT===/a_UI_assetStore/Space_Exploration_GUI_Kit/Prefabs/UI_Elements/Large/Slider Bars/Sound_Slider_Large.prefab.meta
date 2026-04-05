@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 3bd4282b199d24a449f097353fe14216
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/UI_Elements/Large/Slider Bars/Sound_Slider_Large.prefab
+  uploadId: 700894

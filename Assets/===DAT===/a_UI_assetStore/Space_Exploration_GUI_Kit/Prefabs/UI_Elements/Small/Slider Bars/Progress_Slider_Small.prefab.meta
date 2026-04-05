@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: f596453703a2e384ab351cb2442b475a
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Prefabs/UI_Elements/Small/Slider Bars/Progress_Slider_Small.prefab
+  uploadId: 700894

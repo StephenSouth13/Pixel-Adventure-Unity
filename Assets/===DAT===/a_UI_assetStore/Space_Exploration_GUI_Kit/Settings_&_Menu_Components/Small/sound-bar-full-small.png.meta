@@ -1,0 +1,621 @@
+fileFormatVersion: 2
+guid: 0c81afca312b04348bfb7f55ad3463ac
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7414933737352673276
+    second: sound-bar-full-small_0
+  - first:
+      213: 7935459138968340301
+    second: sound-bar-full-small_1
+  - first:
+      213: 7804556972439866979
+    second: sound-bar-full-small_2
+  - first:
+      213: -9167447776601639971
+    second: sound-bar-full-small_3
+  - first:
+      213: -7283062552338268313
+    second: sound-bar-full-small_4
+  - first:
+      213: -2844250598977197655
+    second: sound-bar-full-small_5
+  - first:
+      213: -7578243560675668247
+    second: sound-bar-full-small_6
+  - first:
+      213: 2968708188895275642
+    second: sound-bar-full-small_7
+  - first:
+      213: -7514976370563897675
+    second: sound-bar-full-small_8
+  - first:
+      213: -5849307257946570492
+    second: sound-bar-full-small_9
+  - first:
+      213: 486854856930306574
+    second: sound-bar-full-small_10
+  - first:
+      213: -2448028378073632132
+    second: sound-bar-full-small_11
+  - first:
+      213: 4591321745702179819
+    second: sound-bar-full-small_12
+  - first:
+      213: 7724998881347866683
+    second: sound-bar-full-small_13
+  - first:
+      213: 8829126704164877077
+    second: sound-bar-full-small_14
+  - first:
+      213: 3247962513252507041
+    second: sound-bar-full-small_15
+  - first:
+      213: 3660658619187990910
+    second: sound-bar-full-small_16
+  - first:
+      213: -58958779655974501
+    second: sound-bar-full-small_17
+  - first:
+      213: 3498362788349189966
+    second: sound-bar-full-small_18
+  - first:
+      213: 6939073394865504952
+    second: sound-bar-full-small_19
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sound-bar-full-small_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 408c8084d0dd81990800000000000000
+      internalID: -7414933737352673276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_1
+      rect:
+        serializedVersion: 2
+        x: 10
+        y: 0
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d47c5d30b0a602e60800000000000000
+      internalID: 7935459138968340301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_2
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 0
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36e8393573b5f4c60800000000000000
+      internalID: 7804556972439866979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_3
+      rect:
+        serializedVersion: 2
+        x: 28
+        y: 0
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd3f6b281dea6c080800000000000000
+      internalID: -9167447776601639971
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_4
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 0
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76f7dea223d5dea90800000000000000
+      internalID: -7283062552338268313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_5
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 0
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a9a5c356213788d0800000000000000
+      internalID: -2844250598977197655
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_6
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 0
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ee098002aba4d690800000000000000
+      internalID: -7578243560675668247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_7
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 0
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7a65e07e58f23920800000000000000
+      internalID: 2968708188895275642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_8
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b6a5199ec075b790800000000000000
+      internalID: -7514976370563897675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_9
+      rect:
+        serializedVersion: 2
+        x: 85
+        y: 0
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4010bf33a0613dea0800000000000000
+      internalID: -5849307257946570492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_10
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 0
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0a2184b9e7a1c600800000000000000
+      internalID: 486854856930306574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_11
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 0
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7278dc092bd60ed0800000000000000
+      internalID: -2448028378073632132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_12
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 0
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be3da164dc6a7bf30800000000000000
+      internalID: 4591321745702179819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_13
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 0
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b309705cd85b43b60800000000000000
+      internalID: 7724998881347866683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_14
+      rect:
+        serializedVersion: 2
+        x: 131
+        y: 0
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 513b9ae65fb578a70800000000000000
+      internalID: 8829126704164877077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_15
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 0
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ad533682b4131d20800000000000000
+      internalID: 3247962513252507041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_16
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e711ca08e954dc230800000000000000
+      internalID: 3660658619187990910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_17
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9117326d498e2ff0800000000000000
+      internalID: -58958779655974501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_18
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 0
+        width: 9
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4f9ffebb6eac8030800000000000000
+      internalID: 3498362788349189966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sound-bar-full-small_19
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 0
+        width: 10
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b28253ec7a8c4060800000000000000
+      internalID: 6939073394865504952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      sound-bar-full-small_0: -7414933737352673276
+      sound-bar-full-small_1: 7935459138968340301
+      sound-bar-full-small_10: 486854856930306574
+      sound-bar-full-small_11: -2448028378073632132
+      sound-bar-full-small_12: 4591321745702179819
+      sound-bar-full-small_13: 7724998881347866683
+      sound-bar-full-small_14: 8829126704164877077
+      sound-bar-full-small_15: 3247962513252507041
+      sound-bar-full-small_16: 3660658619187990910
+      sound-bar-full-small_17: -58958779655974501
+      sound-bar-full-small_18: 3498362788349189966
+      sound-bar-full-small_19: 6939073394865504952
+      sound-bar-full-small_2: 7804556972439866979
+      sound-bar-full-small_3: -9167447776601639971
+      sound-bar-full-small_4: -7283062552338268313
+      sound-bar-full-small_5: -2844250598977197655
+      sound-bar-full-small_6: -7578243560675668247
+      sound-bar-full-small_7: 2968708188895275642
+      sound-bar-full-small_8: -7514976370563897675
+      sound-bar-full-small_9: -5849307257946570492
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 298577
+  packageName: Space Game GUI kit
+  packageVersion: 1.0
+  assetPath: Assets/Space_Exploration_GUI_Kit/Settings_&_Menu_Components/Small/sound-bar-full-small.png
+  uploadId: 700894

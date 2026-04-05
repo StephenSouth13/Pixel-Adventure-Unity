@@ -35,17 +35,21 @@ public class TrunkBehaviour : Enemies
         GetRandomHorizontalAxis();
     }
     private void Update()
-    {
-        if (!_isPlayerFound)
-            ChangeDirectionWithTime();
-        else
-            SendProjectilesWithTime();
+{
+    if (!_isPlayerFound)
+        ChangeDirectionWithTime();
+    else
+        SendProjectilesWithTime();
 
-        PlayerCheck();
-        _flip.FlipCharacter(_horizontalDirection);
-       _rbMovement.HorizontalDirection= _horizontalDirection;
-        
-    }
+    PlayerCheck();
+    _flip.FlipCharacter(_horizontalDirection);
+
+    // Thay vì gán trực tiếp: _rbMovement.HorizontalDirection = _horizontalDirection;
+    // Hãy dùng hàm này để con quái thực sự di chuyển (nếu quái Trunk của ông có di chuyển)
+    _rbMovement.HorizontalMove(_horizontalDirection); 
+}
+
+
     void GetRandomHorizontalAxis()
     {
         if (_dontChangeDirection) { _horizontalDirection = 1; return; } 
