@@ -4,37 +4,71 @@ using Fusion;
 using Fusion.Sockets;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using Controllers; // Đảm bảo namespace này khớp với PlayerController của ông
 
 public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
 {
     [SerializeField] private NetworkObject _playerPrefab;
     private NetworkRunner _runner;
 
-    async void StartGame(GameMode mode)
+    // --- HÀM KHỞI TẠO CHÍNH (GỌI TỪ NÚT BẤM MENU) ---
+    // mode: Single (Offline) hoặc AutoHostOrClient (Online)
+    // levelIndex: Màn muốn vào chơi
+    // roomID: Tên phòng nhập từ UI
+    // Trong file BasicSpawner.cs
+// Đổi tên từ StartGameFromMenu thành StartLevel
+public async void StartLevel(GameMode mode, int levelIndex, string roomID = "PixelRoom")
+{
+    if (_runner != null) return; 
+
+    _runner = gameObject.AddComponent<NetworkRunner>();
+    _runner.ProvideInput = true;
+
+    var sceneRef = SceneRef.FromIndex(levelIndex);
+
+    var result = await _runner.StartGame(new StartGameArgs()
     {
-        _runner = gameObject.AddComponent<NetworkRunner>();
-        _runner.ProvideInput = true;
+        GameMode = mode,
+        SessionName = roomID,
+        Scene = sceneRef,
+        SceneManager = gameObject.AddComponent<NetworkSceneManagerDefault>()
+    });
 
-        await _runner.StartGame(new StartGameArgs()
-        {
-            GameMode = mode,
-            SessionName = "PixelRoom",
-            Scene = SceneRef.FromIndex(SceneManager.GetActiveScene().buildIndex),
-            SceneManager = gameObject.AddComponent<NetworkSceneManagerDefault>()
-        });
+    if (result.Ok)
+    {
+        Debug.Log($"Đã khởi động thành công: {mode} tại phòng: {roomID}");
     }
+    else
+    {
+        Debug.LogError($"Lỗi: {result.ShutdownReason}");
+        Destroy(_runner);
+        _runner = null;
+    }
+}
 
+    // --- TRIỆU HỒI PLAYER ---
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
         if (runner.IsServer)
         {
-            // Spawn nhân vật và cấp quyền điều khiển (InputAuthority) cho player đó
+            // Spawn nhân vật tại vị trí an toàn
             runner.Spawn(_playerPrefab, new Vector3(0, 2, 0), Quaternion.identity, player);
         }
     }
 
-    // Các hàm này để trống để tránh lỗi Interface
-    public void OnInput(NetworkRunner runner, NetworkInput input) { }
+    // --- CẦU NỐI INPUT ---
+    public void OnInput(NetworkRunner runner, NetworkInput input)
+    {
+        // Phải có đoạn này thì PlayerController mới nhận được phím bấm!
+        var myPlayer = runner.GetPlayerObject(runner.LocalPlayer);
+        if (myPlayer != null)
+        {
+            var controller = myPlayer.GetComponent<PlayerController>();
+            if (controller != null) controller.OnInput(runner, input);
+        }
+    }
+
+    // --- CÁC CALLBACK BẮT BUỘC (GIỮ NGUYÊN ĐỂ KHÔNG LỖI) ---
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player) { }
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input) { }
     public void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason) { }
@@ -53,12 +87,5 @@ public class BasicSpawner : MonoBehaviour, INetworkRunnerCallbacks
     public void OnObjectExitAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player) { }
     public void OnObjectEnterAOI(NetworkRunner runner, NetworkObject obj, PlayerRef player) { }
 
-    private void OnGUI()
-    {
-        if (_runner == null)
-        {
-            if (GUI.Button(new Rect(10, 10, 200, 40), "Host (Tạo phòng)")) StartGame(GameMode.Host);
-            if (GUI.Button(new Rect(10, 60, 200, 40), "Join (Vào phòng)")) StartGame(GameMode.Client);
-        }
-    }
+    // XÓA OnGUI() ĐI VÌ MÌNH SẼ DÙNG NÚT BẤM UI TRÊN CANVAS
 }
