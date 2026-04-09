@@ -29,8 +29,8 @@ public async void StartLevel(GameMode mode, int levelIndex, string roomID = "Pix
     var result = await _runner.StartGame(new StartGameArgs()
     {
         GameMode = mode,
-        SessionName = roomID,
-        Scene = sceneRef,
+        SessionName = roomID, // Room Id phải có tính duy nhất nếu chơi online, nhưng ở đây tạm để mặc định cho dễ test
+        Scene = sceneRef, 
         SceneManager = gameObject.AddComponent<NetworkSceneManagerDefault>()
     });
 
