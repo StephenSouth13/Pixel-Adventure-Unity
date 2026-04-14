@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: d4e55ce5533496d48a16e95a2a4f9c2a
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 51621
+  packageName: Loading Effects
+  packageVersion: 1.0
+  assetPath: Assets/Loading Effect/Example/Scripts/bl_LEExampleManager.cs
+  uploadId: 93543
