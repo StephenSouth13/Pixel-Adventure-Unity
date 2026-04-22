@@ -44,3 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e684b3d999cc4a4588977bfca6ea05b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::D_GameManager
+  playerData:
+    playerId: 
+    playerName: a
+    character: 
+    level: 0
+    experience: 0
+    gold: 0
+    unlockedPlanets: []

@@ -5,14 +5,23 @@ using UnityEngine;
 
 namespace Managers
 {
-    public class SoundManager : SingletonObject<SoundManager>
+    public class SoundManager : MonoBehaviour
     {
+        public static SoundManager Instance;
         AudioSource[] _audioSource;
         [SerializeField] float _fadeSpeed;
         float[] _volumes = new float[16];
         private void Awake()
         {
-            SingletonThisObject(this);
+            if (Instance == null)
+            {
+                Instance = this;
+                DontDestroyOnLoad(gameObject);
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
             _audioSource = GetComponentsInChildren<AudioSource>();
         }
         private void Start()

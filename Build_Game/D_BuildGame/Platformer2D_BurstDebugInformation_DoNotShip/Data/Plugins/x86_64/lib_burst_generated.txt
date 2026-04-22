@@ -11,7 +11,6 @@ Library: C:\Dev_Dat\Pixel-Adventure-Unity\Temp\BurstOutput\Data\Plugins\x86_64\l
 --linker-options=PdbAltPath="Platformer2D_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Dev_Dat\Pixel-Adventure-Unity\Temp\Burst
---debug=LineOnly
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.3.12f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
 --decode-folder=C:\Dev_Dat\Pixel-Adventure-Unity\Library\Burst
 --output=C:\Dev_Dat\Pixel-Adventure-Unity\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated
@@ -87,7 +86,6 @@ Library: C:\Dev_Dat\Pixel-Adventure-Unity\Temp\BurstOutput\Data\Plugins\x86_64\l
 --linker-options=PdbAltPath="Platformer2D_Data/Plugins/x86_64/lib_burst_generated.pdb"
 --generate-link-xml=Temp\burst.link.xml
 --temp-folder=C:\Dev_Dat\Pixel-Adventure-Unity\Temp\Burst
---debug=LineOnly
 --key-folder=C:/Program Files/Unity/Hub/Editor/6000.3.12f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport
 --decode-folder=C:\Dev_Dat\Pixel-Adventure-Unity\Library\Burst
 --output=C:\Dev_Dat\Pixel-Adventure-Unity\Temp\BurstOutput\Data\Plugins\x86_64\lib_burst_generated

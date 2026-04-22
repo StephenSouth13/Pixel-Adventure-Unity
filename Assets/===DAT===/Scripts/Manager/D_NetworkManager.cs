@@ -20,9 +20,19 @@ public class D_NetworkManager : MonoBehaviour , INetworkRunnerCallbacks
         {
             Destroy(gameObject);
         }
+        prefabDict = new Dictionary<string, NetworkObject>();
+        foreach (var p in prefabs) 
+        {
+            prefabDict.Add(p.name, p);
+        }
     }
 
-    private NetworkRunner runner;
+    public NetworkRunner runner { get; private set; }
+    public PlayerRef playerRef { get; private set; } // lưu trữ PlayerRef của local player để khi spawn object có thể truyền vào đúng playerRef này để chỉ định quyền sở hữu cho local player
+
+    [SerializeField] private List<NetworkObject> prefabs; // kéo thả trong Inspector
+    private Dictionary<string, NetworkObject> prefabDict; // lưu trữ key: prefabName, value: prefab để dễ tìm khi spawn
+
     [Header("Network RunTime")]
     [SerializeField] private bool isConnecting;
     [SerializeField] private bool isCanceled;
@@ -123,19 +133,21 @@ public class D_NetworkManager : MonoBehaviour , INetworkRunnerCallbacks
             {"ID", UnityEngine.Random.Range(1000, 9999)}, // tạo ID phòng ngẫu nhiên
              // có thể thêm các thuộc tính khác như map, mode,... sau này
         };
+        byte[] token = System.Text.Encoding.UTF8.GetBytes(D_GameManager.Instance.playerData.character + "|" + D_GameManager.Instance.playerData.playerName);
+
         var result = await runner.StartGame(new StartGameArgs()
         {
            GameMode = GameMode.Host,
            SessionName = "Room_" + UnityEngine.Random.Range(1000, 9999), // tạo tên phòng ngẫu nhiên
            // SessionName - để tạm - sau kết nối Firebase sẽ lấy tên của player làm tên phòng
            SceneManager = runner.gameObject.AddComponent<NetworkSceneManagerDefault>(),
-           SessionProperties = props
+           Scene = SceneRef.FromIndex(1), // scene sẽ load khi tạo phòng thành công, có thể để mặc định là 0 nếu muốn load thủ công sau khi tạo phòng thành công
+           SessionProperties = props,
+           ConnectionToken = token
         });
         if (result.Ok)
         {
             Debug.Log("Room created successfully");
-            D_GameManager.Instance.LoadScene(1);
-            // load game scene
         }
         else
         {
@@ -151,19 +163,17 @@ public class D_NetworkManager : MonoBehaviour , INetworkRunnerCallbacks
         runner = null;
 
         InitRunner();
-
+        byte[] token = System.Text.Encoding.UTF8.GetBytes(D_GameManager.Instance.playerData.character + "|" + D_GameManager.Instance.playerData.playerName);
         var result = await runner.StartGame(new StartGameArgs()
         {
             GameMode = GameMode.Client,
             SessionName = sessionName, // tên phòng cần join
-            SceneManager = runner.gameObject.AddComponent<NetworkSceneManagerDefault>()
+            ConnectionToken = token
         });
         if (result.Ok)
         {
             Debug.Log("Joined room successfully");
             // load game scene
-            D_GameManager.Instance.LoadScene(1);
-
         }
         else
         {
@@ -175,14 +185,29 @@ public class D_NetworkManager : MonoBehaviour , INetworkRunnerCallbacks
     public void OnSessionListUpdated(NetworkRunner runner, List<SessionInfo> sessionList)
     {
         lastSessionList = sessionList;
-
+        
         OnRoomListUpdated?.Invoke(sessionList);
     }
 
     public void OnPlayerJoined(NetworkRunner runner, PlayerRef player)
     {
         Debug.Log($"Player joined: {player}");
-        OnPlayerJoinedEvent?.Invoke(player);
+        if (runner.IsServer)
+        {
+            var token = runner.GetPlayerConnectionToken(player);
+
+                string data = System.Text.Encoding.UTF8.GetString(token);
+                string[] split = data.Split('|');
+
+                string characterKey = split[0];
+                string playerName = split[1];
+                // 👉 spawn đúng prefab
+            var obj = RunnerSpawn(characterKey + "_UI_Onl", player);
+
+            // 👉 set vào PlayerNetworkData
+            var networkData = obj.GetComponent<PlayerNetworkData>();
+            networkData.SetPlayerData(characterKey, playerName);
+        }
     }
 
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
@@ -190,9 +215,57 @@ public class D_NetworkManager : MonoBehaviour , INetworkRunnerCallbacks
         Debug.Log($"Player left: {player}");
         OnPlayerLeftEvent?.Invoke(player);
     }
+    // --------------------------------------------------------------------------------
+    // các hàm tự viết để gọi sự kiện khi cần thiết
+    public NetworkObject RunnerSpawn(string prefabName, Vector3 position, Quaternion rotation, PlayerRef playerRef)
+    {
+        if (runner == null) 
+        {
+            Debug.LogError("Cannot spawn object: NetworkRunner is not initialized");
+            return null;
+        }
 
+        if (prefabDict.TryGetValue(prefabName, out var prefab)) 
+        {
+            return runner.Spawn(prefab, position, rotation, playerRef);
+        }
+
+        Debug.LogError("Prefab not found: " + prefabName);
+        return null;
+    }
+    public NetworkObject RunnerSpawn(string prefabName,PlayerRef playerRef)
+    {
+        if (runner == null) 
+        {
+            Debug.LogError("Cannot spawn object: NetworkRunner is not initialized");
+            return null;
+        }
+
+        if (prefabDict.TryGetValue(prefabName, out var prefab)) 
+        {
+            var Net_obj = runner.Spawn(prefab,Vector3.zero,Quaternion.identity, playerRef);
+            return Net_obj;
+        }
+        Debug.LogError("Cannot spawn object: ");
+        return null;
+    }
+    public void OnInput(NetworkRunner runner, NetworkInput input)
+    {
+        PlayerInputData data = new PlayerInputData();
+
+        data.move = new Vector2(
+        Input.GetAxisRaw("Horizontal"),
+        Input.GetAxisRaw("Vertical")
+        );
+        data.jump = Input.GetKey(KeyCode.Space);
+        input.Set(data);
+    }
+
+    // end
+    // ------------------------------------------------------------------------------------
     // Các callback khác có thể để trống nếu không dùng
     // public void OnConnectedToServer(NetworkRunner runner) {}
+    #region Các callback khác có thể để trống nếu không dùng
     public void OnConnectedToServer(NetworkRunner runner)
     {
         Debug.Log("[Fusion][OnConnectedToServer]Connected to server");
@@ -207,7 +280,6 @@ public class D_NetworkManager : MonoBehaviour , INetworkRunnerCallbacks
     }
     public void OnConnectRequest(NetworkRunner runner, NetworkRunnerCallbackArgs.ConnectRequest request, byte[] token) {}
     public void OnShutdown(NetworkRunner runner, ShutdownReason shutdownReason) {}
-    public void OnInput(NetworkRunner runner, NetworkInput input) {}
     public void OnUserSimulationMessage(NetworkRunner runner, SimulationMessagePtr message) {}
     public void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ArraySegment<byte> data) {}
     public void OnReliableDataReceived(NetworkRunner runner, PlayerRef player, ReliableKey key, ArraySegment<byte> data) {}
@@ -219,5 +291,5 @@ public class D_NetworkManager : MonoBehaviour , INetworkRunnerCallbacks
     public void OnInputMissing(NetworkRunner runner, PlayerRef player, NetworkInput input) {}
     public void OnCustomAuthenticationResponse(NetworkRunner runner, Dictionary<string, object> data) {}
     public void OnHostMigration(NetworkRunner runner, HostMigrationToken hostMigrationToken) {}
-    
+    #endregion
 }

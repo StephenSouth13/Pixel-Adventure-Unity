@@ -31,6 +31,7 @@ public class D_AudioManager : MonoBehaviour
         if (index >= 0 && index < musicClips.Length)
         {
             musicSource.clip = musicClips[index];
+            musicSource.loop = true;
             musicSource.Play();
         }
     }

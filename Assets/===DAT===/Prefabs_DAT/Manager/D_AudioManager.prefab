@@ -50,7 +50,9 @@ MonoBehaviour:
   sfxSource: {fileID: 8415582218039979691}
   currentMusicVolume: 1
   currentSFXVolume: 1
-  musicClips: []
+  musicClips:
+  - {fileID: 8300000, guid: b8e2e92302c53c8449632134a057ad3d, type: 3}
+  - {fileID: 8300000, guid: 8f4dbae9e59a6354fadbd3e956ac72ff, type: 3}
   sfxClips: []
 --- !u!1 &5038829450077988986
 GameObject:
