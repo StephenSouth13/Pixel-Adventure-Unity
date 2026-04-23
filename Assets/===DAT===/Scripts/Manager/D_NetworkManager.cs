@@ -258,6 +258,8 @@ public class D_NetworkManager : MonoBehaviour , INetworkRunnerCallbacks
         Input.GetAxisRaw("Vertical")
         );
         data.jump = Input.GetKey(KeyCode.Space);
+        data.interacted = Input.GetKey(KeyCode.E);
+
         input.Set(data);
     }
 

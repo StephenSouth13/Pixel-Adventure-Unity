@@ -9,9 +9,9 @@ using UnityEngine;
 
 namespace Combat
 {
-    public class D_HealthManager : MonoBehaviour
+    public class D_Health : MonoBehaviour
     {
-        public static D_HealthManager Instance;
+        public static D_Health Instance;
         public PlayerNetworkData[] data; // khi player được spawn sẽ gán theo thứ tự người chơi vào đây
         [SerializeField] int _maxHealth;
         [SerializeField] bool _IsCooldownAfterHit;
@@ -61,6 +61,7 @@ namespace Combat
                 return;
             }
             SoundManager.Instance.PlaySound(4);
+            _currentHealth -= damage.HitDamage;
             OnHealthChanged?.Invoke();
             StartCoroutine(HitCooldown());
             if (IsDead)

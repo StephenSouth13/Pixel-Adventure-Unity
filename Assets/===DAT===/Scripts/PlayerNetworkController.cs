@@ -2,12 +2,13 @@ using UnityEngine;
 using Fusion;
 using TMPro;
 using Animations;
+using Mechanics;
 
 public struct PlayerInputData : INetworkInput
 {
     public Vector2 move;
     public NetworkBool jump;
-    
+    public NetworkBool interacted;
 }
 namespace Movements
 {
@@ -21,6 +22,7 @@ namespace Movements
         Flip flip_cs;
         CharacterAnimation anim_cs;
         GroundCheck groundCheck_cs;
+        InteractHandler _interact_cs;
         [SerializeField] float maxDistance = 12f; // giới hạn khoảng cách 2 player 
         [SerializeField] float _jumpForce = 12f; // Tăng nhẹ lên vì mạng thường có độ trễ vật lý
         [SerializeField] float _horizontalSpeed = 10f;
@@ -43,7 +45,7 @@ namespace Movements
             flip_cs = GetComponentInChildren<Flip>();
             anim_cs = GetComponentInChildren<CharacterAnimation>();
             groundCheck_cs = GetComponentInChildren<GroundCheck>();
-
+            _interact_cs = GetComponent<InteractHandler>();
             if(playerName_Txt.text == null) playerName_Txt = GetComponentInChildren<TextMeshProUGUI>();
             // CỰC KỲ QUAN TRỌNG: 
             // Trong Multiplayer, ta nên để Rigidbody ở chế độ này để tránh bị rung (jitter)
@@ -85,14 +87,16 @@ namespace Movements
                     Vector2 toOther = (other.position - transform.position).normalized;
 
                     // hướng input của player
-                    Vector2 inputDir = move.normalized;
-
-                    // dot < 0 nghĩa là đang đi RA XA
-                    float dot = Vector2.Dot(inputDir, toOther);
-
-                    if (dot < 0)
+                    if (move.sqrMagnitude > 0.01f)
                     {
-                        move = Vector2.zero; // ❗ chỉ chặn khi đi xa
+                        Vector2 inputDir = move.normalized;
+                        float dot = Vector2.Dot(inputDir, toOther);
+
+                        if (dot < 0)
+                        {
+                            float factor = Mathf.Clamp01((maxDistance - distance) / maxDistance);
+                            move *= factor;
+                        }
                     }
                 }
             }
@@ -100,7 +104,7 @@ namespace Movements
             // flip hướng
             if (input.move.x > 0) FacingRight = true;
             else if (input.move.x < 0) FacingRight = false;
-
+            if(input.interacted) _interact_cs?.Interact();
             // xử lý jump
             if (input.jump && Mathf.Abs(_rb.linearVelocity.y) < 0.01f) // chỉ nhảy khi đang đứng trên flatform
             {
