@@ -107,4 +107,8 @@ public class AudioController : MonoBehaviour
     {
         D_AudioManager.Instance.PlaySFX(index);
     }
+    public void PlayMusic(int index)
+    {
+        D_AudioManager.Instance.PlayMusic(index);
+    }
 }

@@ -1,0 +1,17 @@
+fileFormatVersion: 2
+guid: a0654a0d47b3a0a4e8dc6d186c6cbc54
+MonoImporter:
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 51621
+  packageName: Loading Effects
+  packageVersion: 1.0
+  assetPath: Assets/Loading Effect/Content/Scripts/Internal/Enum/LoadingType.cs
+  uploadId: 93543

@@ -10858,54 +10858,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 25d0c1698dc68db49869e5dc688dc0d0, type: 3}
---- !u!1 &1164244199 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4395908317837194792, guid: 94b278770d6966047a7e939656859953, type: 3}
-  m_PrefabInstance: {fileID: 4395908317486055637}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1164244203
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1164244199}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ad980451443d70438faac0bc6c235a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TrackedObjectOffset: {x: 0, y: 0.4, z: 0}
-  m_LookaheadTime: 0.265
-  m_LookaheadSmoothing: 8.2
-  m_LookaheadIgnoreY: 1
-  m_XDamping: 1.1
-  m_YDamping: 0.5
-  m_ZDamping: 1
-  m_TargetMovementOnly: 1
-  m_ScreenX: 0.5
-  m_ScreenY: 0.5
-  m_CameraDistance: 10.29
-  m_DeadZoneWidth: 0.15
-  m_DeadZoneHeight: 0.06
-  m_DeadZoneDepth: 0
-  m_UnlimitedSoftZone: 0
-  m_SoftZoneWidth: 0.32
-  m_SoftZoneHeight: 0.67
-  m_BiasX: 0
-  m_BiasY: 0
-  m_CenterOnActivate: 1
-  m_GroupFramingMode: 2
-  m_AdjustmentMode: 0
-  m_GroupFramingSize: 0.8
-  m_MaxDollyIn: 5000
-  m_MaxDollyOut: 5000
-  m_MinimumDistance: 1
-  m_MaximumDistance: 5000
-  m_MinimumFOV: 3
-  m_MaximumFOV: 60
-  m_MinimumOrthoSize: 1
-  m_MaximumOrthoSize: 5000
 --- !u!1001 &1164563642
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51307,6 +51259,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4052368252629919938, guid: 94b278770d6966047a7e939656859953, type: 3}
+      propertyPath: Lens.NearClipPlane
+      value: 0.14
+      objectReference: {fileID: 0}
+    - target: {fileID: 4052368252629919938, guid: 94b278770d6966047a7e939656859953, type: 3}
+      propertyPath: Lens.OrthographicSize
+      value: 6.95
+      objectReference: {fileID: 0}
+    - target: {fileID: 4052368252629919938, guid: 94b278770d6966047a7e939656859953, type: 3}
+      propertyPath: Target.TrackingTarget
+      value: 
+      objectReference: {fileID: 266579963}
+    - target: {fileID: 4052368252629919938, guid: 94b278770d6966047a7e939656859953, type: 3}
+      propertyPath: Target.CustomLookAtTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4395908317790086672, guid: 94b278770d6966047a7e939656859953, type: 3}
       propertyPath: m_Follow
       value: 
@@ -51332,9 +51300,17 @@ PrefabInstance:
       value: FollowingCamera
       objectReference: {fileID: 0}
     - target: {fileID: 4395908317790086674, guid: 94b278770d6966047a7e939656859953, type: 3}
+      propertyPath: Damping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4395908317790086674, guid: 94b278770d6966047a7e939656859953, type: 3}
       propertyPath: m_Damping
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4395908317790086674, guid: 94b278770d6966047a7e939656859953, type: 3}
+      propertyPath: BoundingShape2D
+      value: 
+      objectReference: {fileID: 4075281694172287195}
     - target: {fileID: 4395908317790086674, guid: 94b278770d6966047a7e939656859953, type: 3}
       propertyPath: m_MaxWindowSize
       value: -1
@@ -51409,13 +51385,52 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4395908317837194794, guid: 94b278770d6966047a7e939656859953, type: 3}
+    - {fileID: 4877623767535004149, guid: 94b278770d6966047a7e939656859953, type: 3}
+    - {fileID: 4395908317790086672, guid: 94b278770d6966047a7e939656859953, type: 3}
+    - {fileID: 6545868744745848663, guid: 94b278770d6966047a7e939656859953, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4395908317837194792, guid: 94b278770d6966047a7e939656859953, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 4395908317790086673, guid: 94b278770d6966047a7e939656859953, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1164244203}
+      addedObject: {fileID: 4395908317486055639}
   m_SourcePrefab: {fileID: 100100000, guid: 94b278770d6966047a7e939656859953, type: 3}
+--- !u!1 &4395908317486055638 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4395908317790086673, guid: 94b278770d6966047a7e939656859953, type: 3}
+  m_PrefabInstance: {fileID: 4395908317486055637}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4395908317486055639
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4395908317486055638}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 886251e9a18ece04ea8e61686c173e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Cinemachine::Unity.Cinemachine.CinemachinePositionComposer
+  CameraDistance: 10.29
+  DeadZoneDepth: 0
+  Composition:
+    ScreenPosition: {x: 0, y: 0}
+    DeadZone:
+      Enabled: 1
+      Size: {x: 0.15, y: 0.06}
+    HardLimits:
+      Enabled: 1
+      Size: {x: 0.32, y: 0.67}
+      Offset: {x: 0, y: 0}
+  CenterOnActivate: 1
+  TargetOffset: {x: 0, y: 0.4, z: 0}
+  Damping: {x: 1.1, y: 0.5, z: 1}
+  Lookahead:
+    Enabled: 1
+    Time: 0.265
+    Smoothing: 8.2
+    IgnoreY: 1
 --- !u!4 &5175089737620804821 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 841349370395529460, guid: c917778132f016f4b828c0a71f078b68, type: 3}
